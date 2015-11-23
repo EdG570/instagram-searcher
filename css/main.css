@@ -1,0 +1,42 @@
+body {
+  letter-spacing: 1px;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+input {
+  border-radius: 5px;
+}
+
+/*-------------HEADER SECTION----------------*/
+
+header {
+  text-align: center;
+  padding-top: 5em;
+}
+
+#logo {
+  margin-bottom: 1em;
+}
+
+input[type="submit"] {
+  padding: 0.25em 1em;
+  background-color: #D24649;
+  border: none;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+input[type="text"] {
+  padding: 0.2em;
+  margin-right: 0.5em;
+}
+
+input:focus {
+  outline: none;
+}
+
