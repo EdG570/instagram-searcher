@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -13,13 +13,20 @@
         <script src="https://code.angularjs.org/1.3.15/angular-animate.min.js"></script>
         <script src="https://code.angularjs.org/1.3.15/angular-messages.min.js"></script>
     </head>
-    <body>
+    <body ng-controller="searchCtrl">
       <header>
           <img id="logo" src="img/logo.png" alt="Logo image">
-          <form name="myForm">
-              <input type="text" name="search-tag" id="tag" placeholder="Enter a tag to search" ng-model="tag">
+          <form name="myForm" novalidate ng-submit="submit()">
+              <input type="text" name="tag" id="tag" placeholder="Enter a tag to search" ng-model="searchTag" required ng-minlength="2">
               <input type="submit" name="Submit">
           </form>
+          <div ng-if="myForm.$submitted" ng-messages="myForm.tag.$error">
+              <span class="error" ng-message="required">Field is required!</span>
+              <span class="error" ng-message="minlength">Field is too short!</span>
+          </div>
+          <div id="search-verify" ng-if="validation">
+              <h3>Searching Instagram for photos tagged with "{{searchTag}}"</h3>
+          </div>
       </header>
         
 

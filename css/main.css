@@ -40,3 +40,7 @@ input:focus {
   outline: none;
 }
 
+#search-verify > h3 {
+  font-weight: 300;
+}
+
