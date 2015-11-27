@@ -34,6 +34,7 @@ input[type="submit"] {
 input[type="text"] {
   padding: 0.2em;
   margin-right: 0.5em;
+  font-weight: 300;
 }
 
 input:focus {
@@ -43,4 +44,41 @@ input:focus {
 #search-verify > h3 {
   font-weight: 300;
 }
+
+.error {
+  color: red;
+  font-style: italic;
+  margin-top: 2em;
+}
+
+.error-container {
+  margin-top: 1em;
+}
+
+#status-container {
+  width: 10em;
+  height: 1em;
+  border: 1px solid #333;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+#status-bar {
+  width: 1em;
+  height: 1em;
+  background-color: lightblue;
+  -webkit-animation: slide 2s infinite alternate;
+  border-radius: 50%;
+}
+
+@-webkit-keyframes slide {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: 9em;
+  }
+}
+
+
 
