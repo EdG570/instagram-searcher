@@ -13,9 +13,9 @@
         <script src="https://code.angularjs.org/1.3.15/angular-animate.min.js"></script>
         <script src="https://code.angularjs.org/1.3.15/angular-messages.min.js"></script>
     </head>
-    <body ng-controller="searchCtrl" ng-controller="apiCtrl">
+    <body ng-controller="searchCtrl">
       <header>
-          <img id="logo" src="img/logo.png" alt="Logo image">
+          <img id="logo" src="img/snack-logo.svg" alt="Logo image">
 
           <form name="myForm" novalidate ng-submit="myForm.$valid && submit()">
               
@@ -23,9 +23,12 @@
 
               <input type="text" name="location" id="location" placeholder="Northumberland, PA" ng-model="userLocation" required ng-minlength="2">
               
-              <input type="submit" name="Submit">
+              <input type="submit" name="submit" value="Search">
 
           </form>
+      </header>
+
+      <section id="error-section">
           <div class="error-container" ng-if="myForm.$submitted" ng-messages="myForm.tag.$error">
 
               <span class="error" ng-message="required">Field is required!</span>
@@ -33,20 +36,33 @@
               <span class="error" ng-message="minlength">Field is too short!</span>
           </div>
           <div id="search-verify" ng-show="loading" ng-animate>
-              <h3>Searching Instagram for photos tagged with "{{searchTag}}"...</h3>
+              <h3>Searching for "{{searchTag}}" in {{userLocation}}...</h3>
               <div id="status-container">
                   <div id="status-bar"></div>
               </div>
           </div>
-        
-      </header>
-      <section id="results">
-          <div> 
-          <ul ng-repeat="place in places">
-              <li>{{place.venue.name}}</li>
-          </ul>
+      </section>  
+      
+      <section id="results" class="container">
+         
+          
+            <ul id="venue" ng-repeat="place in places">
+                <li>
+                  <h3>{{place.venue.name}}</h3>
+                  <img ng-if="place.venue.photos.count !== 0" ng-src="{{place.venue.photos.groups[0].items[0].prefix + photoSize + place.venue.photos.groups[0].items[0].suffix}}" alt="Venue Image">
+                  <img class="default-img" ng-if="place.venue.photos.count === 0" ng-src="img/snack-logo.svg" alt="Default Image">
+                  <div>
+                    <div class="rating">{{place.venue.rating || 'NR'}}</div>
+                    <div class="full-address">
+                      <p class="address">{{place.venue.location.address}}</p>
+                      <p class="city">{{place.venue.location.city}}</p>
+                    </div>
+                    <div class="likes">{{place.tips[0].likes.summary || '0 Likes'}}</div>
+                  </div>   
+                </li>
+            </ul>
               
-          </div>
+          
       </section>
         
 

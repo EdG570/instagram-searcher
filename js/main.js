@@ -31,7 +31,8 @@
         near: userLocation,
         query: searchTag,
         v: '20140806',
-        m: 'foursquare'
+        m: 'foursquare',
+        venuePhotos: 1
       };
 
       $http({
@@ -42,7 +43,12 @@
       .then(function(result){
         $scope.groups = result.data.response.groups;
         $scope.places = result.data.response.groups[0].items;
+        $scope.photoSize = '300x200';
         console.log($scope.groups);
+
+        $scope.loading = false;
+        $scope.searchTag = '';
+
       },
       function(result) {
         alert('error');

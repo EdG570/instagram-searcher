@@ -15,26 +15,36 @@ input {
 
 header {
   text-align: center;
-  padding-top: 5em;
+  padding: 1em 0;
+  background-color: #D24649;
 }
 
 #logo {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
+  width: 11.25em;
 }
 
 input[type="submit"] {
   padding: 0.25em 1em;
-  background-color: #D24649;
+  background-color: #46D26C;
   border: none;
   color: #fff;
   font-weight: 300;
   letter-spacing: 1px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+
+input[type="submit"]:hover {
+  background-color: #69EF8E;
 }
 
 input[type="text"] {
-  padding: 0.2em;
+  padding: 0.5em 0.2em;
   margin-right: 0.5em;
   font-weight: 300;
+  border: none;
 }
 
 input:focus {
@@ -71,6 +81,10 @@ input:focus {
   border-radius: 50%;
 }
 
+#location {
+  margin-top: 1em;
+}
+
 @-webkit-keyframes slide {
   from {
     margin-left: 0;
@@ -80,5 +94,103 @@ input:focus {
   }
 }
 
+/*--------------------------ERROR SECTION----------------------------*/
 
+#error-section {
+  text-align: center;
+  background: url('img/header-background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+/*----------------------------RESULTS SECTION----------------------------*/
+
+#results {
+  padding: 0 1em;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+#venue > li {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2em;
+  width: 18.75em;
+  margin: 0 auto;
+}
+
+#results img {
+  border-radius: 5px;
+}
+
+#results h3 {
+  color: #851F21;
+  margin-top: 2em;
+}
+
+.rating {
+  padding: 0.5em;
+  border-radius: 50%;
+  background-color: #128531;
+  color: #fff;
+}
+
+.rating-container {
+  margin-top: 1em;
+}
+
+.rating-container p{
+  display: inline-block;
+  font-size: 1em;
+  opacity: 0.5;
+  margin-top: 0;
+}
+
+.city {
+ margin-top: 0.5em;
+}
+
+.address {
+  margin-bottom: 0;
+}
+
+.likes {
+  background-color: #333;
+  padding: 0.25em 0;
+  color: #fff;
+  border-radius: 5px;
+  width: 25%;
+  display: inline-block;
+  position: relative;
+  left: 1em;
+  text-align: center;
+}
+
+.rating {
+  width: 1.5em;
+  display: inline-block;
+}
+
+.full-address {
+  width: 50%;
+  display: inline-block;
+  margin-left: 0.25em;
+  position: relative;
+  top: 1em;
+  left: 1em;
+  opacity: 0.5;
+}
+
+#venue-data {
+  display: inline-block;
+}
+
+.default-img {
+  padding: 2em 0.5em;
+  background-color: #D24649;
+  border-radius: 5px;
+}
 
