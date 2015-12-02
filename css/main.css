@@ -295,7 +295,7 @@ ul {
 
 /*------------------MEDIA QUERIES-----------------*/
 
-@media only screen and (max-width: 356px) {
+@media only screen and (max-width: 375px) {
   #logo {
     margin-bottom: 1em;
   }
