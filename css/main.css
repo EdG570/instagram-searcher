@@ -1,5 +1,6 @@
 body {
   letter-spacing: 1px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .container {
@@ -20,8 +21,7 @@ header {
 }
 
 #logo {
-  margin-bottom: 1.5em;
-  width: 11.25em;
+  width: 8em;
 }
 
 input[type="submit"] {
@@ -42,7 +42,6 @@ input[type="submit"]:hover {
 
 input[type="text"] {
   padding: 0.5em 0.2em;
-  margin-right: 0.5em;
   font-weight: 300;
   border: none;
 }
@@ -98,17 +97,53 @@ input:focus {
 
 #error-section {
   text-align: center;
-  background: url('img/header-background.jpg');
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1em;
+}
+
+.food {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/header-background.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+  padding-top: 3em;
+}
+
+#description {
+  width: 20em;
+  margin: 0 auto; 
+  color: #fff;
+}
+
+#description > h1 {
+  margin-top: 0;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-family: 'Lato', sans-serif;
+  color: #69EF8E;
+}
+
+#description > h3 {
+  line-height: 1.4;
+  letter-spacing: 1px;
+  color: #eee;
+  font-weight: 300;
+}
+
+#search-results > h3 {
+  margin-top: 0.5em;
+}
+
+#search-error > p {
+  max-width: 20em;
+  margin: 0 auto;
 }
 
 /*----------------------------RESULTS SECTION----------------------------*/
 
 #results {
-  padding: 0 1em;
+  padding: 1em;
 }
 ul {
   list-style: none;
@@ -116,10 +151,12 @@ ul {
 }
 
 #venue > li {
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 2em;
+  border: 1px solid #ccc;
+  padding: 1.5em 2em 2em 2em;
   width: 18.75em;
   margin: 0 auto;
+  border-radius: 5px;
+  margin-bottom: 2em;
 }
 
 #results img {
@@ -128,7 +165,7 @@ ul {
 
 #results h3 {
   color: #851F21;
-  margin-top: 2em;
+  margin-top: 0;
 }
 
 .rating {
@@ -150,7 +187,7 @@ ul {
 }
 
 .city {
- margin-top: 0.5em;
+ margin-top: 0em;
 }
 
 .address {
@@ -158,7 +195,7 @@ ul {
 }
 
 .likes {
-  background-color: #333;
+  background-color: #ccc;
   padding: 0.25em 0;
   color: #fff;
   border-radius: 5px;
@@ -189,8 +226,104 @@ ul {
 }
 
 .default-img {
-  padding: 2em 0.5em;
+  padding: 4em 0.5em;
   background-color: #D24649;
   border-radius: 5px;
+  width: 18em;
+}
+
+#quote {
+  font-style: italic;
+  color: #333;
+  font-weight: 200;
+}
+
+.userTips.ng-enter,
+.userTips.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+.userTips.ng-leave,
+.userTips.ng-enter.ng-enter-active {
+  opacity: 1em;
+}
+
+.userTips {
+  border: 1px solid #eee;
+  padding: 0.5em;
+  border-radius: 5px;
+  margin-top: 1em;
+  background-color: #eee;
+  transition: all linear 0.5s;
+}
+
+#tips-btn {
+  border-radius: 5px;
+  background-color: #46D26C;
+  color: #fff;
+  border: none;
+  letter-spacing: 1px;
+  padding: 0.5em 0;
+  display: block;
+  width: 100%;
+  margin: 1em auto 0 auto;
+}
+
+#tips-btn:hover {
+  background-color: #69EF8E;
+}
+
+#tips-btn:focus {
+  outline: none;
+}
+
+.red {
+  color: #FF6E72;
+  font-style: italic;
+}
+
+/*------------------MEDIA QUERIES-----------------*/
+
+@media only screen and (min-width: 400px) {
+  #tag {
+    margin: 0 1em;
+  }
+}
+
+@media only screen and (min-width: 565px) {
+  #description {
+    width: 25em;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #error-section {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  #logo,
+  input[type="submit"] {
+    display: inline-block;
+    margin-left: 1em;
+  }
+
+  input[type="text"] {
+    margin-top: 0;
+  }
+
+  #logo {
+    display: inline-block;
+    float: left;
+    position: relative;
+    top: 0.5em;
+  }
+
+  form {
+    position: relative;
+    bottom: 0.5em;
+  }
 }
 

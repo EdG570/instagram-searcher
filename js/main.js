@@ -5,11 +5,17 @@
   app.controller('searchCtrl', ['$scope', '$http', function($scope, $http){
 
     $scope.loading = false;
+    $scope.notSubmitted = true;
+    $scope.tips = false;
+    $scope.searchResults = false;
+    $scope.noResults = false;
  
     
     //Checks form validation
     $scope.submit = function() {
       $scope.loading = true;
+      $scope.notSubmitted = false;
+
       if($scope.myForm.$valid) {
         console.log('The form is valid!');
         $scope.getJSONData();
@@ -41,21 +47,26 @@
         params: request,
       })
       .then(function(result){
+        $scope.noResults = false;
         $scope.groups = result.data.response.groups;
         $scope.places = result.data.response.groups[0].items;
+        $scope.tips = result.data.response.groups[0].items.tips;
         $scope.photoSize = '300x200';
-        console.log($scope.groups);
 
         $scope.loading = false;
+        $scope.searchTerm = $scope.searchTag;
+        $scope.searchResults = true;
         $scope.searchTag = '';
+        $scope.locationTerm = $scope.userLocation;
+        $scope.userLocation = '';
 
       },
       function(result) {
-        alert('error');
+        $scope.loading = false;
+        $scope.noResults = true;
+        $scope.searchResults = false;
       });
     };
-
-  //set loading=false and set searchTag=''
 
   }]); 
 
