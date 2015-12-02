@@ -3,6 +3,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+html, body {
+  height: 100%;
+}
+
 .container {
   max-width: 1140px;
   margin: 0 auto;
@@ -103,15 +107,18 @@ input:focus {
 
 .food {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/header-background.jpg');
-  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
-  padding-top: 3em;
+  height: 100%;
+  padding-top: 6em;
 }
 
 #description {
-  width: 20em;
+  width: 19em;
   margin: 0 auto; 
   color: #fff;
 }
@@ -143,7 +150,7 @@ input:focus {
 /*----------------------------RESULTS SECTION----------------------------*/
 
 #results {
-  padding: 1em;
+  padding: 1em 0;
 }
 ul {
   list-style: none;
@@ -151,12 +158,12 @@ ul {
 }
 
 #venue > li {
-  border: 1px solid #ccc;
   padding: 1.5em 2em 2em 2em;
   width: 18.75em;
   margin: 0 auto;
   border-radius: 5px;
   margin-bottom: 2em;
+  border: 1px solid #ccc;
 }
 
 #results img {
@@ -195,7 +202,7 @@ ul {
 }
 
 .likes {
-  background-color: #ccc;
+  background-color: #C68889;
   padding: 0.25em 0;
   color: #fff;
   border-radius: 5px;
@@ -283,6 +290,12 @@ ul {
 }
 
 /*------------------MEDIA QUERIES-----------------*/
+
+@media only screen and (max-width: 356px) {
+  #logo {
+    margin-bottom: 1em;
+  }
+}
 
 @media only screen and (min-width: 400px) {
   #tag {
