@@ -109,6 +109,8 @@ input:focus {
 }
 
 .food {
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/header-background.jpg');
+  background: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/header-background.jpg');
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/header-background.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;

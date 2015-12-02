@@ -47,6 +47,8 @@
         params: request,
       })
       .then(function(result){
+        console.log(result);
+
         $scope.noResults = false;
         $scope.groups = result.data.response.groups;
         $scope.places = result.data.response.groups[0].items;
@@ -59,6 +61,11 @@
         $scope.searchTag = '';
         $scope.locationTerm = $scope.userLocation;
         $scope.userLocation = '';
+
+        if(result.data.response.warning) {
+          $scope.noResults = true;
+          $scope.searchResults = false;
+        }
 
       },
       function(result) {
