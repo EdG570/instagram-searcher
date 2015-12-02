@@ -62,13 +62,9 @@ input:focus {
 }
 
 .error {
-  color: red;
+  color: #fff;
   font-style: italic;
   margin-top: 2em;
-}
-
-.error-container {
-  margin-top: 1em;
 }
 
 #status-container {
@@ -104,8 +100,9 @@ input:focus {
 
 #error-section {
   text-align: center;
-  border-bottom: 1px solid #ccc;
   padding-bottom: 1em;
+  padding-top: 1em;
+  background-color: #f6f6f6;
 }
 
 .food {
@@ -124,7 +121,7 @@ input:focus {
 
 #description {
   width: 19em;
-  margin: 0 auto; 
+  margin: 6em auto 0 auto; 
   color: #fff;
 }
 
@@ -144,12 +141,17 @@ input:focus {
 }
 
 #search-results > h3 {
-  margin-top: 0.5em;
+  margin: 0.5em 0;
+  font-weigth: 300;
 }
 
 #search-error > p {
   max-width: 20em;
   margin: 0 auto;
+}
+
+#search-error > h3 {
+  color: #851F21;
 }
 
 /*----------------------------RESULTS SECTION----------------------------*/

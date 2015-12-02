@@ -29,6 +29,14 @@
               <input type="submit" name="submit" value="Search">
 
           </form>
+
+          <div class="error-container" ng-if="myForm.$submitted" ng-messages="myForm.tag.$error">
+
+              <span class="error" ng-message="required">Field is required!</span>
+
+              <span class="error" ng-message="minlength">Field is too short!</span>
+          </div>
+          
         </div>
       </header>
 
@@ -36,13 +44,6 @@
           <div id="description" ng-hide="myForm.$submitted">
             <h1>Find food in your area</h1>
             <h3>Just enter the type of food your looking for and your location. SnackShack will give you a list of venues with specific details for each.</h3>
-          </div>
-
-          <div class="error-container" ng-if="myForm.$submitted" ng-messages="myForm.tag.$error">
-
-              <span class="error" ng-message="required">Field is required!</span>
-
-              <span class="error" ng-message="minlength">Field is too short!</span>
           </div>
 
           <div id="search-verify" ng-show="loading" ng-animate>
