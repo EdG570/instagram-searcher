@@ -297,18 +297,21 @@ ul {
 
 @media only screen and (max-width: 375px) {
   #logo {
-    margin-bottom: 1em;
+    margin-bottom: 0.75em;
   }
 }
 
 @media only screen and (min-width: 400px) {
-  #tag {
-    margin: 0 1em;
-  }
 
   #venue > li {
     padding-right: 2em;
     padding-left: 2em;
+  }
+}
+
+@media only screen and (min-width: 410px) {
+  #tag {
+    margin: 0 1em;
   }
 }
 
