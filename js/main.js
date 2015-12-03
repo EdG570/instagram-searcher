@@ -16,6 +16,7 @@
       $scope.loading = true;
       $scope.notSubmitted = false;
 
+      //Checks if form is valid calls json request function
       if($scope.myForm.$valid) {
         console.log('The form is valid!');
         $scope.getJSONData();
@@ -26,11 +27,13 @@
       }
     };
 
+    //Sends JSON request
     $scope.getJSONData = function() {
       var url = "https://api.foursquare.com/v2/venues/explore";
       var userLocation = $scope.userLocation;
       var searchTag = $scope.searchTag;
 
+      //parameters for request
       var request = {
         client_id: 'MFKB5Y1UIUJQ3S2G2YI3CD5EAGRPIODYIATL1FGLCXD1N1TF',
         client_secret: '1VABGDFHKQ3BDAUOGYV4NJ5NL0B3XCQ2JRQ4MMIDKC3IGNVW',

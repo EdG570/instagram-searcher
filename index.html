@@ -81,12 +81,22 @@
                     </div>
                     <div class="likes">{{place.tips[0].likes.summary || '0 Likes'}}</div>
                   </div> 
-
+                  
                   <button id="tips-btn" ng-click="tabs = !tabs">View tips</button> 
                   
                   <div class="userTips" ng-if="tabs" ng-app="ngAnimate">
                     <span>{{place.tips[0].user.firstName || 'No tips listed'}}-</span><span id="quote"> "{{place.tips[0].text}}"</span>
                   </div> 
+
+                  <div class="menu-section">
+                    <ul ng-repeat="item in items">
+                      <li>
+                        <button id="menu-btn" ng-if="place.venue.hasMenu" ng-click="getMenu(place.venue.id)">Menu</button>
+                        <h3>{{item.name}} {{item.price}}</h3>
+                      </li>
+
+                    </ul>
+                  </div>
                 </li>
             </ul>
               
