@@ -15,6 +15,11 @@ html, body {
   margin: 0 auto;
 }
 
+.results-container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
 input {
   border-radius: 5px;
 }
@@ -32,7 +37,7 @@ header {
 }
 
 input[type="submit"] {
-  padding: 0.25em 1em;
+  padding: 0.5em 2em;
   background-color: #46D26C;
   border: none;
   color: #fff;
@@ -100,21 +105,18 @@ input:focus {
 
 #error-section {
   text-align: center;
-  padding-bottom: 1em;
   padding-top: 1em;
   background-color: #f6f6f6;
 }
 
 .food {
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/header-background.jpg');
-  background: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/header-background.jpg');
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/header-background.jpg');
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/header-background.jpg') no-repeat center center fixed;
+  background: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/header-background.jpg') no-repeat center center fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/header-background.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   height: 100%;
   padding-top: 6em;
 }
@@ -157,11 +159,15 @@ input:focus {
 /*----------------------------RESULTS SECTION----------------------------*/
 
 #results {
-  padding: 1em 0;
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
 }
 ul {
   list-style: none;
   padding: 0;
+  width: 366px;
+  margin: 0 auto;
 }
 
 #venue > li {
@@ -350,9 +356,17 @@ ul {
     top: 0.5em;
   }
 
+  
+
   form {
     position: relative;
     bottom: 0.5em;
+  }
+}
+
+@media screen and (min-width: 796px) {
+  ul {
+    margin: 0 0.5em 0 0.5em;
   }
 }
 
